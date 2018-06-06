@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Animals, Cars, Sports GIPHY</title>
+</head>
+<body>
+    
+    <button class="btn btn-primary" data-search="Dog">Dog</button>
+    <button class="btn btn-primary" data-search="Cat">Cat</button>
+    <button class="btn btn-primary" data-search="Rabbit">Rabbit</button>
+    <button class="btn btn-primary" data-search="Unicorn">Unicorn</button>
+    <button class="btn btn-primary" data-search="Rhino">Rhino</button>
+    <button class="btn btn-primary" data-search="Cows">Cows</button>
+    <button class="btn btn-primary" data-search="Hamsters">Hamster</button>
+    <button class="btn btn-primary" data-search="Pokemons">Pokemons</button>
+    <button class="btn btn-primary" data-search="Fast Cars">Sports Cars</button>
+
+    
+    <div class="pushButtons"></div>
+    <div class='row'>
+        <div class='col-md-9'>
+            <div class='display'></div>
+        </div>
+    </div>
+
+    <div class='col-md-3'>
+        <form id='Gif-form'>
+            <label for='newGifInput'>Type in the GIF to search</label>
+            <input type='text' id='newGifInput'>
+            
+                <input id='addGif' type='submit' value='Submit'>
+            </input>    
+        
+        </form>
+
+    </div>
+    <script type="text/javascript" src="assets/js/app.js" ></script>
+</body>
+</html>
