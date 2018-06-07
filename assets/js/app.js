@@ -7,14 +7,23 @@ var stillGif;
 
 // display the buttons using function display the HTML to  the appropriate content
 function displayButtons(){
-    $('#pushButtons').empty();
-    for (var i = 0; i < topics; i++){
-        var showBtn = $('<btn btn-primary>')
-        showBtn.text(topics[i])
-        showBtn.addClass('showBtn')
-        showBtn.attr({'data-search': topics[i]});
+    var topics = $(this).attr("data-search");
+    var queryUrl  = `https://api.giphy.com/v1/gifs/search?q=` + topics + `&api_key=djALz2kux6YRp13Gfq1icR5DPV7gnwxe&limit=10`;
+    
+
+
+    // Creating an AJAX call for the specific topic button being clicked
+
+    $.ajax({url:queryUrl,method:'GET'})
+        .then(function(response){
+            
+
+        var showBtn = $('<div class="pushButtons">')
+        var imgUrl = response.data.url;
+        var image = $('<img>').attr('src', imgUrl);
+        showBtn.append(image);
         $('#pushButtons').append(showBtn);
-    }   
+    });   
 }
     displayButtons();
 
@@ -23,26 +32,27 @@ $('.showBtn').on('click', function(){
     $('.display').empty();
 });
 
-// Creating an AJAX call for the specific topic button being clicked
 
-var topics = $(this).attr("data-search");
-var queryUrl  = `https://api.giphy.com/v1/gifs/search?q=` + topics + `&api_key=djALz2kux6YRp13Gfq1icR5DPV7gnwxe&limit=10`;
-    $.ajax({url:queryUrl,method:'GET'})
-        .done(function(response){
-            currentGIf = giphy.data;
-            $.each(currentGif, function(index,value){
-                animatedGif= value.images.original.url;
-                pauseGif = value.images.original_still.url;
-                
+//function for displaying gif data
+function renderButtons() {
 
-            }
-        )
-
-
-
+//looping through the arrays of gifs
+for (var i=0; i < topics.length; i++){
+ 
     
-,
-
+// The dynamically generating buttons for each movie in the array
+// This code $("<button>") is all jQuery needs to create the beggining and end tag (<button></button>
+        var a = $("<button>");
+ // adding a class of new-btn to our bottom
+ a.addClass("addGif");
+ //adding a data-attribute
+ a.attr("data-search", topics[i]);
+ // providing initial button text
+ a.text(topics[i]);
+ // adding buttons to the buttons-view div   
+    $("#addGif").append(a);
+}
+}
 
 
 
@@ -56,25 +66,5 @@ $("#addGif").on("click", function(event){
     $("#newGifInput").val('');
    
     displayButtons();
-})
-
-// function to call the giphy
-
-$('button').on('click',function(){
-    var x = $(this).data("search");
-   
-
-    
-    console.log(queryUrl);
-
-    
-        console.log(response);
-        for(var i=0; i<response.data.length;i++){
-        $('#GIFArea').prepend("<p>Rating: "+response.data[i].rating+"</p>");
-        $('#GIFArea').prepend("<img src='"+response.data[i].images.downsized.url+"'>");
-
-        }
-       
-    })
 })
 
