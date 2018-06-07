@@ -4,18 +4,26 @@ var currentGIf;
 var pauseGif;
 var animatedGif;
 var stillGif;
+
 // display the buttons using function display the HTML to  the appropriate content
 function displayButtons(){
     $('#pushButtons').empty();
     for (var i = 0; i < topics; i++){
-        var showBtn = $('<btn btn-primary>').text(topics[i]).addClass('showBtn').attr({'data-search': topics[i]});
+        var showBtn = $('<btn btn-primary>')
+        showBtn.text(topics[i])
+        showBtn.addClass('showBtn')
+        showBtn.attr({'data-search': topics[i]});
         $('#pushButtons').append(showBtn);
     }   
+}
+    displayButtons();
 
 //display GIF on click
 $('.showBtn').on('click', function(){
     $('.display').empty();
-}
+});
+
+// Creating an AJAX call for the specific topic button being clicked
 
 var topics = $(this).attr("data-search");
 var queryUrl  = `https://api.giphy.com/v1/gifs/search?q=` + topics + `&api_key=djALz2kux6YRp13Gfq1icR5DPV7gnwxe&limit=10`;
@@ -29,20 +37,16 @@ var queryUrl  = `https://api.giphy.com/v1/gifs/search?q=` + topics + `&api_key=d
 
             }
         )
-// Creating an AJAX call for the specific topic button being clicked
+
 
 
     
-    showBtn.attr("id", "show");
-    showBtn.attr("data-search", topics[i]);
-    showBtn.text(topics[i]);
-        $("pushButtons").append(a);
-    }
+,
 
 
-displayButtons();
 
-// submit button to add input
+
+// when user adds a new topic, submit button to add input
 
 $("#addGif").on("click", function(event){
     event.preventDefault();
