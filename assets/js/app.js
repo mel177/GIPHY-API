@@ -1,3 +1,5 @@
+$(document).ready()
+
 // array of gif topics
 var topics = ["dogs", "cows", "unicorns", "cats" ];     
 var currentGIf;
@@ -8,11 +10,11 @@ var stillGif;
 // display the buttons using function display the HTML to  the appropriate content
 function displayButtons(){
     var topics = $(this).attr("data-search");
-    var queryUrl  = `https://api.giphy.com/v1/gifs/search?q=` + topics + `&api_key=djALz2kux6YRp13Gfq1icR5DPV7gnwxe&limit=10`;
     
 
 
     // Creating an AJAX call for the specific topic button being clicked
+    var queryUrl  = `https://api.giphy.com/v1/gifs/search?q=` + topics + `&api_key=djALz2kux6YRp13Gfq1icR5DPV7gnwxe&limit=10`;
 
     $.ajax({url:queryUrl,method:'GET'})
         .then(function(response){
@@ -30,7 +32,10 @@ function displayButtons(){
 //display GIF on click
 $('.showBtn').on('click', function(){
     $('.display').empty();
+   
+
 });
+
 
 
 //function for displaying gif data
@@ -66,5 +71,5 @@ $("#addGif").on("click", function(event){
     $("#newGifInput").val('');
    
     displayButtons();
-})
+});
 
