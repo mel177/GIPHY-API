@@ -6,7 +6,7 @@ var topics = $(this).attr("data-search");
 var queryUrl  = `https://api.giphy.com/v1/gifs/search?q=` + topics + `&api_key=djALz2kux6YRp13Gfq1icR5DPV7gnwxe&limit=10`;
 
 
-// Creating an AJAX call for the specific movie button being clicked
+// Creating an AJAX call for the specific topic button being clicked
 
 // display the buttons
 
@@ -55,7 +55,4 @@ $('button').on('click',function(){
        
     })
 })
-
-
-
 
