@@ -11,7 +11,7 @@ var stillGif;
 function displayGifButtons(){
     var topics = $(this).attr("data-search");
     
-
+    $("#pushButtons").empty(); 
 
     // Creating an AJAX call for the specific topic button being clicked
     var queryUrl  = `https://api.giphy.com/v1/gifs/search?q=` + topics + `&api_key=djALz2kux6YRp13Gfq1icR5DPV7gnwxe&limit=10`;
