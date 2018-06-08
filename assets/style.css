@@ -1,8 +1,3 @@
-form {
-    padding: 20px;
-
-}
-
-#newGifInput {
-    color: blue;
+button, div, form, input {
+    margin: 10px;
 }
