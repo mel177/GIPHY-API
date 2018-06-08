@@ -1,14 +1,14 @@
-$(document).ready()
+$(document).ready(function() {
 
 // array of gif topics
-var topics = ["dogs", "cows", "unicorns", "cats" ];     
+var topics = ["dogs", "cows", "unicorns", "cats"];     
 var currentGIf;
 var pauseGif;
 var animatedGif;
 var stillGif;
 
 // display the buttons using function display the HTML to  the appropriate content
-function displayButtons(){
+function displayGifButtons(){
     var topics = $(this).attr("data-search");
     
 
@@ -27,27 +27,29 @@ function displayButtons(){
         $('#pushButtons').append(showBtn);
     });   
 }
-    displayButtons();
 
+    displayGifButtons();
+});
+
+function renderButtons(){
 //display GIF on click
 $('.showBtn').on('click', function(){
     $('.display').empty();
    
 
-});
+
 
 
 
 //function for displaying gif data
-function renderButtons() {
+
 
 //looping through the arrays of gifs
 for (var i=0; i < topics.length; i++){
- 
     
 // The dynamically generating buttons for each movie in the array
 // This code $("<button>") is all jQuery needs to create the beggining and end tag (<button></button>
-        var a = $("<button>");
+        var a = $("<Gif-form>");
  // adding a class of new-btn to our bottom
  a.addClass("addGif");
  //adding a data-attribute
@@ -57,7 +59,7 @@ for (var i=0; i < topics.length; i++){
  // adding buttons to the buttons-view div   
     $("#addGif").append(a);
 }
-}
+
 
 
 
@@ -72,4 +74,6 @@ $("#addGif").on("click", function(event){
    
     displayButtons();
 });
+});
 
+};

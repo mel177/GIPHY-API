@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
-
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -13,11 +16,7 @@
 </head>
 <body>
     
-
-  
-
-    <div class="btn-group">
-    <div class="pushButtons"></div>
+    <div  id='Gif-form' class="pushButtons">
     <div class='row'>
         <div class='col-md-9'>
             <div class='display'></div>
@@ -25,21 +24,19 @@
     </div>
 </div>
 
+
     <div class='col-md-3'>
-        <form id='Gif-form'>
+        
             <label for='newGifInput'>Type in the GIF to search</label>
             <input type='text' id='newGifInput'>
             
                 <input id='addGif' type='submit' value='Submit'>
             </input>    
         
-        </form>
+        </div>
    
     </div>
-    <script
-    src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
+   
     <script type="text/javascript" src="assets/js/app.js" ></script>
 </body>
 </html>
