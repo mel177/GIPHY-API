@@ -11,31 +11,6 @@ function renderButtons() {
 
 }
 
-// This function handles events where one button is clicked 
-/*
-function addNewButton() {
-
-    $('#addGif').on('click', function (event) {
-        event.preventDefault();
-        // submit button for new topics... aka animals
-        var newAnimal = $('#gif-input').val().trim();
-        // if (newAnimal === ''){
-        // return newAnimal; // no blank buttons
-        //  }
-        topics.push(newAnimal);
-        console.log(newAnimal);
-
-        renderButtons();
-        return false;
-
-
-    });
-}
-*/
-//console.log(addNewButton);
-
-
-// ========================================================
 
 // This calls the renderButtons() function
 
